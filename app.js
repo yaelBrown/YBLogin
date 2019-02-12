@@ -11,6 +11,7 @@ mongoose.connect('mongodb://_:_@ds121455.mlab.com:21455/yblogin', { useNewUrlPar
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var auth = require('./routes/auth')(passport);
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use(session({
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/auth', auth);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
