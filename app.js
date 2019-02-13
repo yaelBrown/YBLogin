@@ -6,8 +6,9 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var passport = require('passport');
+var key = require('./config/keys');
 
-mongoose.connect('mongodb://_:_@ds121455.mlab.com:21455/yblogin', { useNewUrlParser: true });
+mongoose.connect(key, { useNewUrlParser: true });
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
