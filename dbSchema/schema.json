@@ -1,0 +1,9 @@
+{
+  {
+    username: 
+    email: 
+    password: 
+  }
+}
+
+db.logins.insertOne({"username": "admin"}{"email": "admin@yaelbrown.com"}{"password": "yael123"})
