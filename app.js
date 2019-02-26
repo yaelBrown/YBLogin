@@ -8,7 +8,7 @@ var session = require('express-session');
 var passport = require('passport');
 var key = require('./config/keys');
 
-mongoose.connect(key, { useNewUrlParser: true });
+mongoose.connect("mongodb://yael:yael123@localhost:27017/yblogin", { useNewUrlParser: true });
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
