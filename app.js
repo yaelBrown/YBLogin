@@ -4,12 +4,25 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var db = mongoose.connection;
 var session = require('express-session');
 var passport = require('passport');
 var key = require('./config/keys');
+var bodyParser = require('body-parser');
 
+// Connect to database
 mongoose.connect("mongodb://yael:yael123@localhost:27017/yblogin", { useNewUrlParser: true });
 
+// Test database connection
+db.on('error', console.error.bind(console, 'CoNnection error:'));
+db.once('open', function() {
+  console.log("Database is connected: Callback is called");
+});
+
+// Require Database Schema
+var login = require('./db/loginModel');
+
+// Front-end routes
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var auth = require('./routes/auth')(passport);
