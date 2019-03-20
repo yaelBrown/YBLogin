@@ -11,7 +11,7 @@ var key = require('./config/keys');
 var bodyParser = require('body-parser');
 
 // Connect to database
-mongoose.connect("mongodb://yael:yael123@localhost:27017/yblogin", { useNewUrlParser: true });
+mongoose.connect("mongodb://yael:yael123@localhost:27017/login", { useNewUrlParser: true });
 
 // Test database connection
 db.on('error', console.error.bind(console, 'CoNnection error:'));

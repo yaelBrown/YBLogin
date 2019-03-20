@@ -7,3 +7,5 @@
 }
 
 // db.logins.insertOne({"username": "admin"}{"email": "admin@yaelbrown.com"}{"password": "yael123"})
+
+// db.createUser({user: "yael", pwd: "yael123", roles: ["readWrite", "dbAdmin"]})
