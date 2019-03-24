@@ -16,4 +16,10 @@ router.get('/signup', function(req, res, next) {
   res.render('signup', { title: 'Express' });
 });
 
+// POST signup
+router.post('signup', function(req, res, next) {
+  newUser = new loginSchema;
+});
+  
+
 module.exports = router;
